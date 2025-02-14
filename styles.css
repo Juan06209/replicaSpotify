@@ -17,6 +17,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo img {
@@ -35,6 +36,7 @@ nav {
     font-size: 16px;
 }
 
+/* Botones */
 .auth-buttons button {
     background-color: #1DB954;
     border: none;
@@ -100,3 +102,108 @@ footer {
     padding: 20px;
     background-color: #000;
 }
+
+/* 🟢 Estilos Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #000;
+        width: 200px;
+        text-align: right;
+        padding: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: white;
+    }
+
+    .features-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .download-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 80px 10px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .download-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Mejoras en los botones de login y registro */
+.auth-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.auth-buttons button {
+    background-color: #1DB954;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    min-width: 120px;
+    text-align: center;
+}
+
+.auth-buttons button:hover {
+    background-color: #18a34a;
+    transform: scale(1.05);
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+    .auth-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .auth-buttons button {
+        width: 100%;
+        max-width: 200px;
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
